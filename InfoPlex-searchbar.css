@@ -1,0 +1,64 @@
+.omnibar-container {
+    flex-grow: 1;
+    max-width: 720px;
+    position: relative;
+}
+
+.omnibar {
+    background: var(--bg-secondary);
+    border-radius: 24px;
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.omnibar::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.omnibar:focus-within {
+    border-color: transparent;
+    box-shadow: 0 4px 20px rgba(66, 133, 244, 0.3);
+}
+
+.omnibar:focus-within::before {
+    opacity: 1;
+}
+
+.omnibar input {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: inherit;
+    pointer-events: auto;
+}
+
+.omnibar input::placeholder {
+    color: var(--text-secondary);
+}
+
+.search-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: 12px;
+    pointer-events: none;
+}

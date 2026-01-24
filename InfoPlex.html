@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFOPLEX | Search Interface</title>
+    
+    <!-- All CSS Files -->
+    <link rel="stylesheet" href="InfoPlex-theme.css">
+    <link rel="stylesheet" href="InfoPlex-background.css">
+    <link rel="stylesheet" href="InfoPlex-icons.css">
+    <link rel="stylesheet" href="InfoPlex-searchbar.css">
+    <link rel="stylesheet" href="InfoPlex-navigation.css">
+    <link rel="stylesheet" href="InfoPlex-sidebar.css">
+    <link rel="stylesheet" href="InfoPlex-settings.css">
+    <link rel="stylesheet" href="InfoPlex-security.css">
+    <link rel="stylesheet" href="InfoPlex-welcome.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Technox Security Shield -->
+    <div id="aegisShield">
+        <div class="shield-icon">🛡️</div>
+        <h1 style="font-size: 4rem; margin: 0 0 20px 0; font-weight: 800; letter-spacing: -1px;">ACCESS DENIED</h1>
+        <p style="font-size: 1.3rem; opacity: 0.9; margin: 0 0 10px 0; font-weight: 500;">Technox Security Protocol has blocked this query</p>
+        <p id="blockedWord" style="font-size: 1rem; opacity: 0.7; margin: 0 0 40px 0;"></p>
+        <button onclick="closeShield()" style="padding: 16px 48px; border-radius: 12px; border: none; cursor: pointer; font-weight: 700; font-size: 15px; background: white; color: #ea4335; transition: all 0.2s;">Return to Safety</button>
+    </div>
+
+    <!-- History Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2>📚 Browsing History</h2>
+            <button class="close-sidebar" onclick="toggleSidebar()">✕</button>
+        </div>
+        <div class="sidebar-content">
+            <button class="clear-history-btn" onclick="clearHistory()">🗑️ Clear All History</button>
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div id="settingsPanel" class="settings-panel">
+        <div class="settings-header">
+            <h2>⚙️ Settings</h2>
+            <button class="close-settings" onclick="toggleSettings()">✕</button>
+        </div>
+        <div class="settings-content">
+            <div class="setting-item">
+                <h3>🎨 Theme</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" onclick="setTheme('dark')" id="darkTheme">🌙 Dark</button>
+                    <button class="theme-btn" onclick="setTheme('light')" id="lightTheme">☀️ Light</button>
+                    <button class="theme-btn" onclick="setTheme('cosmic')" id="cosmicTheme">🌌 Cosmic</button>
+                </div>
+            </div>
+            <div class="setting-item">
+                <h3>🔒 Privacy Mode</h3>
+                <div class="flux-toggle">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="fluxMode" onchange="toggleFluxMode()">
+                        <span class="slider"></span>
+                    </label>
+                    <label for="fluxMode" style="cursor: pointer;">
+                        <strong>Flux Mode</strong> - Browse without saving history
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-bar" id="loadingBar"></div>
+
+    <!-- Browser Chrome -->
+    <div class="browser-chrome">
+        <div class="controls">
+            <button class="btn-nav" onclick="toggleSidebar()" title="History">📚</button>
+            <button class="btn-nav" onclick="goHome()" title="Home">⌂</button>
+            <button class="btn-nav" onclick="goBack()" title="Back">←</button>
+            <button class="btn-nav" onclick="goForward()" title="Forward">→</button>
+            <button class="btn-nav" onclick="refresh()" title="Refresh">↻</button>
+        </div>
+
+        <div class="omnibar-container">
+            <div class="omnibar">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="urlInput" placeholder="Search Google or type a URL" onkeypress="handleSearch(event)" autocomplete="off">
+                <div class="search-actions">
+                    <button class="action-btn" title="Voice Search">🎤</button>
+                    <button class="action-btn" title="Search by Image">📷</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-profile" onclick="logout()">
+            <div class="online-indicator"></div>
+            <span id="userName">GUEST</span>
+        </div>
+        <button class="btn-settings" onclick="toggleSettings()" title="Settings">⚙️</button>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div class="welcome-screen" id="welcome">
+        <div class="logo-container">
+            <h1 class="logo-text">INFOPLEX</h1>
+        </div>
+        <p class="subtitle">Quantum Navigation System</p>
+        <div class="quick-links">
+            <a class="quick-link" onclick="quickSearch('news')">📰 News</a>
+            <a class="quick-link" onclick="quickSearch('weather')">🌤️ Weather</a>
+            <a class="quick-link" onclick="quickSearch('trending')">🔥 Trending</a>
+        </div>
+    </div>
+
+    <iframe id="viewport" src="about:blank"></iframe>
+
+    <!-- All JavaScript Files -->
+    <script src="InfoPlex-user.js"></script>
+    <script src="InfoPlex-security.js"></script>
+    <script src="InfoPlex-history.js"></script>
+    <script src="InfoPlex-theme.js"></script>
+    <script src="InfoPlex-sidebar.js"></script>
+    <script src="InfoPlex-settings.js"></script>
+    <script src="InfoPlex-navigation.js"></script>
+    <script src="InfoPlex-homebutton.js"></script>
+    <script src="InfoPlex-searcher.js"></script>
+    <script src="InfoPlex-app.js"></script>
+</body>
+</html>

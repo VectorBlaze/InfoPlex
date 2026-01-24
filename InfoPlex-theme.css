@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-primary: #0a0e1a;
+    --bg-secondary: #141824;
+    --panel: rgba(20, 24, 36, 0.95);
+    --accent-primary: #4285f4;
+    --accent-secondary: #34a853;
+    --accent-warning: #fbbc04;
+    --accent-danger: #ea4335;
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --border: rgba(255, 255, 255, 0.1);
+    --hover: rgba(66, 133, 244, 0.08);
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+.light-theme {
+    --bg-primary: #f0f2f5;
+    --bg-secondary: #ffffff;
+    --panel: rgba(255, 255, 255, 0.95);
+    --accent-primary: #1a73e8;
+    --accent-secondary: #34a853;
+    --accent-warning: #fbbc04;
+    --accent-danger: #ea4335;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --border: rgba(0, 0, 0, 0.1);
+    --hover: rgba(26, 115, 232, 0.08);
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.cosmic-theme {
+    --bg-primary: #0d0221;
+    --bg-secondary: #1a0b2e;
+    --panel: rgba(26, 11, 46, 0.95);
+    --accent-primary: #7b2cbf;
+    --accent-secondary: #c77dff;
+    --accent-warning: #e0aaff;
+    --accent-danger: #ff006e;
+    --text-primary: #f8f9fa;
+    --text-secondary: #c8b6ff;
+    --border: rgba(199, 125, 255, 0.2);
+    --hover: rgba(123, 44, 191, 0.15);
+    --shadow: rgba(123, 44, 191, 0.3);
+}
+
+* { box-sizing: border-box; }
+
+body, html { 
+    margin: 0; 
+    padding: 0; 
+    height: 100%; 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.3s, color 0.3s;
+}
+
+#viewport {
+    width: 100%;
+    height: calc(100vh - 65px);
+    border: none;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.loading-bar {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 101;
+    transition: transform 0.3s;
+}
+
+.loading-bar.active {
+    animation: loading 2s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% { transform: scaleX(0); transform-origin: left; }
+    50% { transform: scaleX(1); transform-origin: left; }
+    51% { transform: scaleX(1); transform-origin: right; }
+    100% { transform: scaleX(0); transform-origin: right; }
+}
