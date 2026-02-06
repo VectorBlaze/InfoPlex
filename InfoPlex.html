@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INFOPLEX | Search Interface</title>
     
-    <!-- All CSS Files -->
+    <link rel="canonical" href="https://vectorblaze.github.io/infoplex/" />
+    <meta name="description" content="INFOPLEX - High-speed search interface with Technox Security and custom themes.">
+
     <link rel="stylesheet" href="InfoPlex-theme.css">
     <link rel="stylesheet" href="InfoPlex-background.css">
     <link rel="stylesheet" href="InfoPlex-icons.css">
@@ -17,13 +19,11 @@
     <link rel="stylesheet" href="InfoPlex-welcome.css">
 </head>
 <body>
-    <!-- Background Elements -->
     <div class="bg-grid"></div>
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
 
-    <!-- Technox Security Shield -->
     <div id="aegisShield">
         <div class="shield-icon">🛡️</div>
         <h1 style="font-size: 4rem; margin: 0 0 20px 0; font-weight: 800; letter-spacing: -1px;">ACCESS DENIED</h1>
@@ -32,7 +32,6 @@
         <button onclick="closeShield()" style="padding: 16px 48px; border-radius: 12px; border: none; cursor: pointer; font-weight: 700; font-size: 15px; background: white; color: #ea4335; transition: all 0.2s;">Return to Safety</button>
     </div>
 
-    <!-- History Sidebar -->
     <div id="sidebar" class="sidebar">
         <div class="sidebar-header">
             <h2>📚 Browsing History</h2>
@@ -44,7 +43,6 @@
         </div>
     </div>
 
-    <!-- Settings Panel -->
     <div id="settingsPanel" class="settings-panel">
         <div class="settings-header">
             <h2>⚙️ Settings</h2>
@@ -67,7 +65,7 @@
                         <span class="slider"></span>
                     </label>
                     <label for="fluxMode" style="cursor: pointer;">
-                        <strong>Flux Mode</strong> - Browse without saving history
+                        <strong>Flux-Mode</strong> - Browse without saving history
                     </label>
                 </div>
             </div>
@@ -76,10 +74,9 @@
 
     <div class="loading-bar" id="loadingBar"></div>
 
-    <!-- Browser Chrome -->
     <div class="browser-chrome">
         <div class="controls">
-            <button class="btn-nav" onclick="toggleSidebar()" title="History">📚</button>
+            <button class="btn-nav" onclick="toggleSidebar()" title="History">📜</button>
             <button class="btn-nav" onclick="goHome()" title="Home">⌂</button>
             <button class="btn-nav" onclick="goBack()" title="Back">←</button>
             <button class="btn-nav" onclick="goForward()" title="Forward">→</button>
@@ -91,8 +88,8 @@
                 <span class="search-icon">🔍</span>
                 <input type="text" id="urlInput" placeholder="Search Google or type a URL" onkeypress="handleSearch(event)" autocomplete="off">
                 <div class="search-actions">
-                    <button class="action-btn" title="Voice Search">🎤</button>
-                    <button class="action-btn" title="Search by Image">📷</button>
+                    <button class="action-btn" title="Under developement">🎤</button>
+                    <button class="action-btn" title="Under developement">📷</button>
                 </div>
             </div>
         </div>
@@ -104,22 +101,23 @@
         <button class="btn-settings" onclick="toggleSettings()" title="Settings">⚙️</button>
     </div>
 
-    <!-- Welcome Screen -->
     <div class="welcome-screen" id="welcome">
         <div class="logo-container">
             <h1 class="logo-text">INFOPLEX</h1>
         </div>
-        <p class="subtitle">Quantum Navigation System</p>
+        <p class="subtitle">Back at it!, Let's Browse</p>
         <div class="quick-links">
-            <a class="quick-link" onclick="quickSearch('news')">📰 News</a>
-            <a class="quick-link" onclick="quickSearch('weather')">🌤️ Weather</a>
-            <a class="quick-link" onclick="quickSearch('trending')">🔥 Trending</a>
+            <a class="quick-link" onclick="quickSearch('news ')">📰 News feed</a>
+            <a class="quick-link" onclick="quickSearch('weather in my area')">🌤️ Climate</a>
+            <a class="quick-link" onclick="quickSearch('trending globally and in my country')">🔥 current Trends</a>
+            <a class="quick-link" onclick="quickSearch('Anime')">⚡🌠 Anime</a>
+            <a class="quick-link" onclick="quickSearch('Currency reports near my location')">📊 Currency </a>
+            <a class="quick-link" onclick="quickSearch('Trending Phonk songs')">☠ Phonks</a>
         </div>
     </div>
 
     <iframe id="viewport" src="about:blank"></iframe>
 
-    <!-- All JavaScript Files -->
     <script src="InfoPlex-user.js"></script>
     <script src="InfoPlex-security.js"></script>
     <script src="InfoPlex-history.js"></script>

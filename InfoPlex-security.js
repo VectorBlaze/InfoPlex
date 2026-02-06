@@ -8,13 +8,13 @@ const RESTRICTED_WORDS = [
     "stab", "shoot", "strangle", "mutilate", "behead", "dismember",
     
     // Explicit Content
-    "fuck", "shit", "bitch", "bastard", "damn", "hell", "ass", "penis",
+    "fuck", "shit", "bitch", "bastard", "penis",
     "vagina", "sex", "porn", "xxx", "nude", "naked", "nsfw", "cock",
     "dick", "pussy", "whore", "slut", "cunt", "motherfucker", "asshole",
     "tits", "boobs", "booty", "masturbate", "orgasm", "hentai",
     
     // Drugs
-    "cocaine", "heroin", "meth", "marijuana", "weed", "drug", "crack",
+    "cocaine", "heroin","marijuana", "weed", "drug",
     "lsd", "ecstasy", "molly", "cannabis", "narcotic", "opium", "fentanyl",
     
     // Hate Speech

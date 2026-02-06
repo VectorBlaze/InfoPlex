@@ -18,9 +18,9 @@
 }
 
 .shield-icon {
-    font-size: 8rem;
+    font-size: 9rem;
     margin-bottom: 20px;
-    animation: shake 0.5s infinite;
+    animation: shake 2.0s infinite;
 }
 
 @keyframes shake {
